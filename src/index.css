@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-merriweather: "Merriweather", serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-lato: "Lato", sans-serif;
+}
+
+/* Custom styles for resume rendering */
+.resume-preview-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth transition for editing states */
+.editable-input {
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* --- CLEAN MINIMALISM DESIGN THEME OVERRIDES --- */
+
+/* Form Sidebar styling refinements */
+.form-sidebar input[type="text"],
+.form-sidebar input[type="email"],
+.form-sidebar input[type="tel"],
+.form-sidebar input[type="url"],
+.form-sidebar textarea,
+.form-sidebar select {
+  border-color: #e4e4e7 !important; /* Zinc 200 */
+  border-radius: 0.5rem !important; /* Rounded lg */
+  transition: all 0.15s ease-in-out;
+}
+
+.form-sidebar input[type="text"]:focus,
+.form-sidebar input[type="email"]:focus,
+.form-sidebar input[type="tel"]:focus,
+.form-sidebar input[type="url"]:focus,
+.form-sidebar textarea:focus,
+.form-sidebar select:focus {
+  border-color: #09090b !important; /* Zinc 950 */
+  box-shadow: 0 0 0 1px #09090b !important;
+  outline: none !important;
+}
+
+/* Accordion Header Icons color normalization (replace blue-50 with zinc-100) */
+.form-sidebar .bg-blue-50 {
+  background-color: #f4f4f5 !important; /* Zinc 100 */
+}
+.form-sidebar .text-blue-600 {
+  color: #09090b !important; /* Zinc 950 */
+}
+
+/* Checkbox visual style */
+.form-sidebar input[type="checkbox"] {
+  border-color: #d1d1d6 !important;
+  accent-color: #09090b !important;
+  border-radius: 0.25rem !important;
+}
+.form-sidebar input[type="checkbox"]:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 1px #09090b !important;
+}
+
+/* Dashed "Add Item" buttons hover refinement */
+.form-sidebar .border-dashed {
+  border-color: #e4e4e7 !important;
+  background-color: #fafafa !important;
+  border-radius: 0.5rem !important;
+  color: #52525b !important;
+}
+.form-sidebar .border-dashed:hover {
+  border-color: #09090b !important;
+  color: #09090b !important;
+}
+
+/* Top toolbar action buttons overrides */
+#btn-download-pdf {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+#btn-download-pdf:hover {
+  background-color: #18181b !important;
+}
+
+#btn-print-resume {
+  background-color: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+  color: #27272a !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+#btn-print-resume:hover {
+  background-color: #fafafa !important;
+  color: #09090b !important;
+}
+
+#btn-clear-resume {
+  background-color: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+  color: #71717a !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+#btn-clear-resume:hover {
+  background-color: #fef2f2 !important; /* Light red */
+  color: #ef4444 !important;
+  border-color: #fee2e2 !important;
+}
+
+/* Informational Views & Dynamic Help Boxes overrides */
+#example-post-page .bg-blue-50,
+#blog-post-page .bg-blue-50,
+#faq-page .bg-blue-50 {
+  background-color: #f4f4f5 !important;
+}
+#example-post-page .text-blue-600,
+#blog-post-page .text-blue-600,
+#faq-page .text-blue-600 {
+  color: #09090b !important;
+}
+
+/* Page body styling */
+body {
+  background-color: #fafafa !important;
+}
+
+/* Print CSS Styles */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide everything except the resume paper */
+  nav, footer, .no-print, header, aside, .form-sidebar, .toolbar-panel, button, input, select, textarea {
+    display: none !important;
+  }
+
+  /* Force the resume element to fit the entire printed page */
+  .print-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Custom print helper for page margins */
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Easy Resume Builder",
+  "description": "100% Free Resume Builder. Build professional resumes, view live preview, download ATS-friendly PDF instantly. No signup required.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
